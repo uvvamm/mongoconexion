@@ -11,14 +11,17 @@ const cors = require('cors');
 
 app.use(cors());
 
+/* parseodel body */
+app.use( express.json());
+
+
+//conexion a mongo
 dbConnection();
 
-app.get('/', (req,res) => {
-        res.json( {
-                ok: true,
-                msg:'hola mundo' 
-        });
-});
+
+
+app.use('/api/usuarios',require('./rutas/usuarios'));
+app.use('/api/login',require('./rutas/auth'));
 
 app.listen( process.env.PORT, () => {
         console.log('listening on port '+process.env.PORT);
