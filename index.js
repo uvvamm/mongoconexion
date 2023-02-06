@@ -22,6 +22,10 @@ dbConnection();
 
 app.use('/api/usuarios',require('./rutas/usuarios'));
 app.use('/api/login',require('./rutas/auth'));
+app.use('/api/hospitales',require('./rutas/hospitales'));
+app.use('/api/medicos',require('./rutas/medicoRuta'));
+app.use('/api/busquedas',require('./rutas/busquedas'));
+app.use('/api/archivos',require('./rutas/cargadearchivos'));
 
 app.listen( process.env.PORT, () => {
         console.log('listening on port '+process.env.PORT);

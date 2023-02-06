@@ -23,7 +23,7 @@ const router = Router();
     ],
     crearUsuarios
 
-  
+   
  ,crearUsuarios);
 
  router.put('/:id',
