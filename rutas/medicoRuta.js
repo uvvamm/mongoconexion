@@ -29,6 +29,10 @@ const router = Router();
  router.put('/:id',
  /* middelware verificar la informacion  */
  [
+  validarJwt,
+      check('nombre','el nombre del medico es necesario').not().isEmpty(),
+      check('hospital','el nombre del hospital es necesario').isMongoId(),
+      validarCampos
  ],actualizarMedico);
 
  router.delete('/:id'

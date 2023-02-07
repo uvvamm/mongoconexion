@@ -27,6 +27,9 @@ const router = Router();
  router.put('/:id',
  /* middelware verificar la informacion  */
  [
+  validarJwt,
+  check('nombre','el nombre del hospital es necesario').not().isEmpty(),
+  validarCampos
  ],actualizarHospital);
 
  router.delete('/:id'

@@ -11,7 +11,7 @@ const cors = require('cors');
 
 app.use(cors());
 //carpeta publication           
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 /* parseodel body */
 app.use( express.json());
@@ -23,10 +23,15 @@ dbConnection();
 
 
 app.use('/api/usuarios',require('./rutas/usuarios'));
+
 app.use('/api/login',require('./rutas/auth'));
+app.use('/api/login/renew',require('./rutas/auth'));
 app.use('/api/google',require('./rutas/auth'));
+
 app.use('/api/hospitales',require('./rutas/hospitales'));
+
 app.use('/api/medicos',require('./rutas/medicoRuta'));
+
 app.use('/api/busquedas',require('./rutas/busquedas'));
 app.use('/api/archivos',require('./rutas/cargadearchivos'));
 
